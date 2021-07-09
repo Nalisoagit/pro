@@ -1,0 +1,63 @@
+
+#container{
+    position: absolute;
+    bottom: 30%;
+    left: 30%;
+    width :500px ;
+    height: 250px;
+    color : white ;
+    background-color: rgb(3, 3, 39);
+    border: 5px dotted rgb(138, 138, 197) ;
+    box-shadow: 7px 7px rgb(47, 48, 68);
+}
+#information{
+    position : absolute ;
+    bottom: 0px;
+    background-color: white;
+    color : rgb(3, 3, 39);
+    width: 100%;
+    height: 25px ;
+    
+}
+a{
+    text-decoration: none;
+    color: blue ;
+}
+#information p{
+    margin : 0px ;
+}
+h1 , h5{
+    text-align: center;
+}
+
+h1{
+    font-size: 50px;
+    animation-name: anim;
+    animation-duration: 2s;
+}
+a:hover{
+    color:red ;
+}
+a:visited{
+    color:gray ;
+}
+@keyframes anim{
+    from{opacity:0%}
+    to{opacity: 100%;}
+}
+@media screen and (max-width:690px){
+    #container{
+        
+        width: 50%;
+       height: 200px;
+    }
+    h3{
+        font-size: 12px ;
+    }
+    h1{
+        font-size: 20px;
+    }
+    #information{
+        height: 60px;
+    }
+}
