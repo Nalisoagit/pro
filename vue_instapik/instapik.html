@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <h2>Instapik</h2><img src="messenger.png" id="mes"><hr>
+        <img src="ac.jpg" class="pdp1"><spam>User1</spam><br>
+        <img src="paysage.jpg" style="width: 100%;height:250px;"><br>
+        <img v-bind:src="source" v-on:click="changephotos" style="width: 5%;" srcset="">
+        <p>{{nbj}} J'aime</p>
+        <input type="text" id="ee" v-model="temp" placeholder="Votre commentaire....">
+        <button v-on:click="commenter(temp)">Commenter</button><hr>
+        <div class="como" v-for="com in coms.slice().reverse()">
+           <img src="commando.jpg" class="pdpuser2"><spam>   User2 {{date}}</spam>
+           <p class="comsa">{{com}} </p>
+        </div>
+    </div>
+    <h3>RAJAONA Andriamananjara Nalisoa IMITICIA5</h3>
+    <script>
+        var d = new Date();
+        var date = d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();
+        var hours = d.getHours() + "h" + d.getMinutes();
+        var fullDate ='le '+hours+','+date;
+        var app=new Vue({
+            el:"#app",
+            data:{
+                temp: "",
+                coms: [],
+                date:fullDate,
+                source:"coeur.png",
+                idp:1,
+                nbj:432
+            },
+            methods:{
+                commenter: function(rep){
+                    this.coms.push(rep) ;
+                    this.temp="" ;
+                },
+                changephotos : function(){
+                    if(this.idp==1){
+                        this.source="coeur2.png" ;
+                        this.idp=0;
+                        this.nbj++ ;
+
+                    }else{
+                        this.source="coeur.png" ;
+                        this.idp=1;
+                        this.nbj--;
+                    } 
+                }
+            }
+        })
+    </script>
+</body>
+</html>
